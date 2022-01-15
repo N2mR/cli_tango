@@ -1,0 +1,67 @@
+package cli_tango;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+public class Main {
+
+	public static void main(String[] args) {
+		
+		
+		try {
+			
+			Scanner sc = new Scanner(System.in);
+			File file = new File("../data.txt");
+			FileReader fr = new FileReader(file);
+			System.out.println();
+			BufferedReader br = new BufferedReader(fr);
+			
+			int selector = sc.nextInt();
+			
+			if(selector == 1) {
+				String data;
+				while((data = br.readLine()) != null) {
+					String[] ary = data.split("　");
+					System.out.println(ary[0]);
+					String event = sc.nextLine();
+					do {
+						System.out.println(ary[1] + "\n");
+					}while(event == null);
+					
+				}
+			}else if(selector == 2) {
+				int cnt = 0;
+				String data;
+				while((data = br.readLine()) != null) {
+					cnt++;
+				}
+				int[] targetArray = new int[cnt];
+				for(int i = 0; i < cnt; i++) {
+					targetArray[i] = i;
+				}
+				List<Integer> randomIndex= new ArrayList<>();
+				for(int i = 0; i < cnt; i++) {
+					randomIndex.add(i);
+				}
+				System.out.println(Collection.shuffle(randomIndex));
+			}
+			
+			
+			
+			fr.close();
+			
+		} catch(IOException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+}

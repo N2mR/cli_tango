@@ -1,0 +1,20 @@
+package cli_tango;
+
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		
+		Path path = Paths.get("");
+		Path current = Paths.get(path.toAbsolutePath().toString());
+		System.out.println(current.toString());
+		
+		
+
+	}
+
+}

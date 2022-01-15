@@ -1,0 +1,40 @@
+package cli_tango;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		
+		try {
+			Scanner sc = new Scanner(System.in);
+			File file = new File("../data.txt");
+			FileReader fr = new FileReader(file);
+			System.out.println();
+			BufferedReader br = new BufferedReader(fr);
+			
+			String data;
+			while((data = br.readLine()) != null) {
+				String[] ary = data.split("　");
+				System.out.println(ary[0] + "\n");
+				String event = sc.nextLine();
+				do {
+					System.out.println(ary[1]);
+				}while(event == null);
+			}
+			
+			
+			fr.close();
+			
+		} catch(IOException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+}

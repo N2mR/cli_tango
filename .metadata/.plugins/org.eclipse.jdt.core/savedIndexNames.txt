@@ -1,0 +1,5 @@
+INDEX VERSION 1.131+C:\Users\anymm\Desktop\cui_tango\.metadata\.plugins\org.eclipse.jdt.core
+2077099227.index
+1865797976.index
+3704149507.index
+3392071394.index
