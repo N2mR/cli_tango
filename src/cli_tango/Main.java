@@ -32,11 +32,14 @@ public class Main {
 				if(selector == 1) {
 					//昇順に表示する場合
 					String data;
+					List<String> dataArray = new ArrayList<>();
 					while((data = br.readLine()) != null) {
-						String[] ary = data.split("　");
-						System.out.println(">>>  " + ary[0]);
-						
-							
+						dataArray.add(data);
+					}
+					for(int i = 0; i < dataArray.size(); i++) {
+						String[] ary = dataArray.get(i).split("　");
+						System.out.println("[" + (i + 1) + "/" + dataArray.size() + "]");
+						System.out.print(">>>  " + ary[0]);
 						String result = sc.nextLine();
 						do {
 							result = sc.nextLine();
@@ -51,9 +54,11 @@ public class Main {
 					while((data = br.readLine()) != null) {
 						dataArray.add(data);
 					}
+					int cnt = 1;
 					for(int i = dataArray.size() - 1; i >= 0; i--) {
 						String[] ary = dataArray.get(i).split("　");
-						System.out.println(ary[0]);
+						System.out.println("[" + (dataArray.size() - i) + "/" + dataArray.size() + "]");
+						System.out.print(">>>  " + ary[0]);
 						String event = sc.nextLine();
 						do {
 							event = sc.nextLine();
@@ -81,7 +86,8 @@ public class Main {
 					if(randomIndex.size() != 0) {
 						for(int i = 0; i < randomIndex.size(); i++) {
 							String[] ary = dataArray.get(randomIndex.get(i)).split("　");
-							System.out.println(">>>  " + ary[0]);
+							System.out.println("[" + (i + 1) + "/" + dataArray.size() + "]");
+							System.out.print(">>>  " + ary[0]);
 							String result = sc.nextLine();
 							do {
 								result = sc.nextLine();
